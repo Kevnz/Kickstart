@@ -1,0 +1,1 @@
+Kickstart is a simple Node.js module that creates a folder structure and adds files needed to get up and running quickly.
