@@ -27,7 +27,7 @@ fs.writeFileSync('package.json', fs.readFileSync(execRoot + '/resources/package.
 fs.mkdirSync('views');
 fs.mkdirSync('public');
 fs.mkdirSync('lib');
-//TODO: figure out how to pull the file contents out of the module dir when I will be in the new dir
+
 fs.writeFileSync('app.js', fs.readFileSync(execRoot + '/resources/app.js'));
 fs.writeFileSync('package.json', fs.readFileSync(execRoot + '/resources/package.json'));
 process.chdir(fullRoot);
