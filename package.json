@@ -3,7 +3,7 @@
 , "engines": [ "node >=0.4.0" ]
 , "description": "Command line tool to kickstart web apps for node.js"
 , "author": "Kevin Isom (http://kevinisom.info)" 
-, "keywords" : [ "express", "web", "shell" ]
-, "man" : "./man/json.1"
+, "keywords" : [ "express", "web", "shell" ] 
 , "bin" : { "kickstart" : "./bin/kickstart.js" }
+, "dependencies" : { "optimist" : ">=0.0.1"}
 }
