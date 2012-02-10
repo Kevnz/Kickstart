@@ -11,13 +11,6 @@ var args = process.argv.slice(0);
 // shift off node and script name
 args.shift(); args.shift();
 
-console.log('the cli version');
-console.log(args);
-console.log(__filename);
-
-console.log('make root directory');
-console.log(process.cwd() + '/' + args[0]);
-
 rootDir = args[0];
 fullRoot =process.cwd() + '/' + rootDir;
 fs.mkdirSync(rootDir);
@@ -32,4 +25,3 @@ fs.writeFileSync('app.js', fs.readFileSync(execRoot + '/resources/app.js'));
 fs.writeFileSync('package.json', fs.readFileSync(execRoot + '/resources/package.json'));
 process.chdir(fullRoot);
 
-//Tell the library to do the heavy lifting
