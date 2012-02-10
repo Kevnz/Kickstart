@@ -1,5 +1,5 @@
-{ "name": "kickstart"
-, "version": "0.0.1"
+{ "name": "kickstart-ex"
+, "version": "0.0.4"
 , "engines": [ "node >=0.4.0" ]
 , "description": "Command line tool to create a new expressjs web app with some default resources"
 , "author": "Kevin Isom (http://kevinisom.info)" 
