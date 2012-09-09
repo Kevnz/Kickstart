@@ -9,7 +9,6 @@ var sys = require("util"),
 	execRoot =  process.platform === "win32" ? __filename.replace('bin\\kickstart.js', '') : __filename.replace('bin/kickstart.js', '');
 
 var args = process.argv.slice(0);
-// shift off node and script name
 args.shift(); args.shift();
 
 rootDir = args[0];
