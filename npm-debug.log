@@ -1,0 +1,47 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@1.1.37
+3 info using node@v0.6.20
+4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
+5 verbose config file C:\Users\OEM\.npmrc
+6 verbose config file C:\Program Files (x86)\nodejs\etc\npmrc
+7 verbose config file C:\Program Files (x86)\nodejs\node_modules\npm\npmrc
+8 verbose publish [ '.' ]
+9 verbose read json C:\Projects\nodejs\Kickstart\package.json
+10 verbose cache add [ '.', null ]
+11 silly cache add name=undefined spec="." args=[".",null]
+12 verbose parsed url { pathname: '.', path: '.', href: '.' }
+13 silly lockFile 3a52ce78- .
+14 verbose lock . C:\Users\OEM\AppData\Roaming\npm-cache\3a52ce78-.lock
+15 verbose read json package.json
+16 verbose tar pack [ 'C:\\Users\\OEM\\AppData\\Local\\Temp\\npm-8868\\1347168813731-0.8387315946165472\\tmp.tgz',
+16 verbose tar pack   '.' ]
+17 verbose tarball C:\Users\OEM\AppData\Local\Temp\npm-8868\1347168813731-0.8387315946165472\tmp.tgz
+18 verbose folder .
+19 info prepublish kickstart-ex@0.0.5
+20 silly lockFile de3dee9b-13731-0-8387315946165472-tmp-tgz C:\Users\OEM\AppData\Local\Temp\npm-8868\1347168813731-0.8387315946165472\tmp.tgz
+21 verbose lock C:\Users\OEM\AppData\Local\Temp\npm-8868\1347168813731-0.8387315946165472\tmp.tgz C:\Users\OEM\AppData\Roaming\npm-cache\de3dee9b-13731-0-8387315946165472-tmp-tgz.lock
+22 error tar pack Error reading .
+23 silly lockFile de3dee9b-13731-0-8387315946165472-tmp-tgz C:\Users\OEM\AppData\Local\Temp\npm-8868\1347168813731-0.8387315946165472\tmp.tgz
+24 error TypeError: Cannot call method 'filter' of undefined
+24 error     at Packer.addIgnoreRules (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\fstream-npm\node_modules\fstream-ignore\ignore.js:148:13)
+24 error     at Packer.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\fstream-npm\node_modules\fstream-ignore\ignore.js:133:10)
+24 error     at [object Object].<anonymous> (fs.js:123:5)
+24 error     at [object Object].emit (events.js:64:17)
+24 error     at fs.js:1190:12
+24 error     at Object.oncomplete (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\graceful-fs\graceful-fs.js:94:5)
+24 error  [TypeError: Cannot call method 'filter' of undefined]
+25 error You may report this log at:
+25 error     <http://github.com/isaacs/npm/issues>
+25 error or email it to:
+25 error     <npm-@googlegroups.com>
+26 error System Windows_NT 6.1.7601
+27 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+28 error cwd C:\Projects\nodejs\Kickstart
+29 error node -v v0.6.20
+30 error npm -v 1.1.37
+31 error type non_object_property_call
+32 error message Cannot call method 'filter' of undefined
+33 verbose exit [ 1, true ]
