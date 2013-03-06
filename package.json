@@ -1,8 +1,8 @@
 {
     "name": "kickstart-ex",
-    "version": "0.0.5",
+    "version": "0.2.0",
     "engines": [
-        "node >=0.4.0"
+        "node >=0.8.0"
     ],
     "description": "Command line tool to create a new express web app with some default resources. Inspired by the express command line functionality, but with different settings",
     "author": "Kevin Isom (http://kevinisom.info)",
