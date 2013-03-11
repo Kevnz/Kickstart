@@ -3,7 +3,6 @@
 var sys = require("util"),
     fs = require('fs'),
     path = require('path'),
-    npm = require('npm'),
     KickStart = require("../lib/kickstart").KickStart,
     skinCss = require('../lib/skin').skin,
     rootDir = '',
