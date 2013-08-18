@@ -16,8 +16,12 @@ args.shift();
 rootDir = args[0];
 
 fullRoot = path.join(process.cwd() , rootDir);
+var asciify = require('asciify'); 
+asciify("KickStart",  function (ascii) {
+    console.log(ascii.toString());   
 
-kick.build({rootDirectory: rootDir, fullRootDirectory: fullRoot}, function(err,result) {
-    console.log('Finished setup');
-    console.log('Now run npm install in project directory');
+    kick.build({rootDirectory: rootDir, fullRootDirectory: fullRoot}, function(err,result) {
+        console.log('Finished setup');
+        console.log('Now run npm install in project directory');
+    }); 
 });

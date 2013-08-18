@@ -19,6 +19,7 @@
     "dependencies": {
         "optimist": ">=0.0.1",
         "mkdirp" : "latest",
-        "heredoc": "latest"
+        "heredoc": "latest",
+        "asciify": "latest"
     }
 }
