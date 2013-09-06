@@ -21,8 +21,8 @@ console.log(template);
 
 fullRoot = path.join(process.cwd() , rootDir);
 var asciify = require('asciify'); 
-asciify("KickStart",  function (err, res) {
-    console.log(res.toString());   
+asciify("KickStart", function (err, ascii) {
+    console.log(ascii.toString()); 
 
     kick.build({rootDirectory: rootDir, fullRootDirectory: fullRoot, template:template}, function(err,result) {
         console.log('Finished setup');
