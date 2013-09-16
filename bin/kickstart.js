@@ -7,7 +7,16 @@ var sys = require("util"),
     skinCss = require('../lib/skin').skin,
     rootDir = '',
     fullRoot = '';
-var argv = require('optimist').argv;
+var argv = require('optimist')
+    .default('t', 'jade')
+    .default('p', 'sass')
+    .argv;
+
+if (argv.help || argv.h) {
+  displayHelp();
+  return;
+}
+
 var kick = new KickStart();
 
 var args = process.argv.slice(0);
@@ -29,3 +38,14 @@ asciify("KickStart", function (err, ascii) {
         console.log('Now run npm install in project directory');
     }); 
 });
+
+function displayHelp() {
+  console.log('');
+  console.log('  Usage: Kickstart [options] <project name>');
+  console.log('');
+  console.log('  Options:');
+  console.log('');
+  console.log('    -t, --template   specify the template. (jade|ejs) (defaults to jade)');
+  console.log('    -p, --pre        specify the css procompiler. (sass|less|none) (defaults to sass)');
+  console.log('');
+}
