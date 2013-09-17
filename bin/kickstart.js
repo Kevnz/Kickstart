@@ -4,40 +4,52 @@ var sys = require("util"),
     fs = require('fs'),
     path = require('path'),
     KickStart = require("../lib/kickstart").KickStart,
-    skinCss = require('../lib/skin').skin,
-    rootDir = '',
-    fullRoot = '';
+    skinCss = require('../lib/skin').skin;
+
 var argv = require('optimist')
     .default('t', 'jade')
     .default('p', 'sass')
     .argv;
 
 if (argv.help || argv.h) {
-  displayHelp();
-  return;
+    displayHelp();
+    return;
 }
 
-var kick = new KickStart();
-
-var args = process.argv.slice(0);
-console.log(argv._);
-args.shift(); 
-args.shift();
-rootDir = args[0];
-
-var template = argv.t || '';
-console.log(template);
-
-fullRoot = path.join(process.cwd() , rootDir);
-var asciify = require('asciify'); 
+var asciify = require('asciify');
 asciify("KickStart", function (err, ascii) {
+    if (err) {
+        console.log(err);
+        return;
+    }
     console.log(ascii.toString()); 
 
-    kick.build({rootDirectory: rootDir, fullRootDirectory: fullRoot, template:template}, function(err,result) {
-        console.log('Finished setup');
-        console.log('Now run npm install in project directory');
-    }); 
+    createRoot(process.argv.slice(0), function(root, fullRoot) {
+        var kick = new KickStart();
+
+        var template = argv.template;
+        if (!template) template = argv.t;	//	defaults to 'jade'
+
+        // todo: specify css
+
+        kick.build({rootDirectory: root, fullRootDirectory: fullRoot, template:template}, function(err,result) {
+            console.log('--------------');
+            console.log('Finished setup');
+            console.log('Now run npm install in project directory');
+        }); 
+    });
 });
+
+//  we expect args to look like: node,/usr/local/bin/kickstart,<filename>
+//  so: shift 2 to the right to get <filename>
+function createRoot(args, callback) {
+    args.shift();
+    args.shift();
+    var root = args[0];
+    var fullRoot = path.join(process.cwd() , root);
+
+    callback(root, fullRoot);
+}
 
 function displayHelp() {
   console.log('');
@@ -49,3 +61,4 @@ function displayHelp() {
   console.log('    -p, --pre        specify the css procompiler. (sass|less|none) (defaults to sass)');
   console.log('');
 }
+
