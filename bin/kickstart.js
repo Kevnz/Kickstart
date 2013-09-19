@@ -30,9 +30,10 @@ asciify("KickStart", function (err, ascii) {
         var template = argv.template;
         if (!template) template = argv.t;	//	defaults to 'jade'
 
-        // todo: specify css
+        var pre = argv.pre;
+        if (!pre) pre = argv.p;			//	defaults to 'sass'
 
-        kick.build({rootDirectory: root, fullRootDirectory: fullRoot, template:template}, function(err,result) {
+        kick.build({rootDirectory: root, fullRootDirectory: fullRoot, template: template, precompiler: pre}, function(err,result) {
             console.log('--------------');
             console.log('Finished setup');
             console.log('Now run npm install in project directory');
