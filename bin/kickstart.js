@@ -22,9 +22,10 @@ asciify("KickStart", function (err, ascii) {
         console.log(err);
         return;
     }
-    console.log(ascii.toString()); 
+    console.log(ascii.toString());
+    console.log(argv.template);
 
-    createRoot(process.argv.slice(0), function(root, fullRoot) {
+    createRoot(process.argv.slice(0), function createRootCallback (root, fullRoot) {
         var kick = new KickStart();
 
         var template = argv.template;
@@ -33,7 +34,7 @@ asciify("KickStart", function (err, ascii) {
         var pre = argv.pre;
         if (!pre) pre = argv.p;			//	defaults to 'sass'
 
-        kick.build({rootDirectory: root, fullRootDirectory: fullRoot, template: template, precompiler: pre}, function(err,result) {
+        kick.build({rootDirectory: root, fullRootDirectory: fullRoot, template: template, precompiler: pre}, function buildCallback (err,result) {
             console.log('--------------');
             console.log('Finished setup');
             console.log('Now run npm install in project directory');
