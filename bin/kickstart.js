@@ -8,7 +8,7 @@ var sys = require("util"),
 
 var argv = require('optimist')
     .default('t', 'jade')
-    .default('p', 'sass')
+    .default('p', 'css')
     .argv;
 
 if (argv.help || argv.h) {
