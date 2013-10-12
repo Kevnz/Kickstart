@@ -37,8 +37,8 @@ asciify("KickStart", function (err, ascii) {
         kick.build({rootDirectory: root, fullRootDirectory: fullRoot, template: template, precompiler: pre}, function buildCallback (err,result) {
             console.log('--------------');
             console.log('Finished setup');
-            console.log('Now run npm install in project directory');
-        }); 
+            console.log('Now run npm install and bower install in project directory');
+        });
     });
 });
 
