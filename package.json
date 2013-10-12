@@ -1,11 +1,18 @@
 {
     "name": "kickstart-ex",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "engines": [
         "node >=0.8.0"
     ],
     "description": "Command line tool to create a new express web app with some default resources. Inspired by the express command line functionality, but with different settings",
     "author": "Kevin Isom (http://kevinisom.info)",
+     "repository" : { 
+        "type" : "git"
+      , "url" : "git@github.com:Kevnz/Kickstart.git"
+    },
+    "bugs" : {
+        "url": "https://github.com/Kevnz/Kickstart/issues"
+    },
     "keywords": [
         "express",
         "web",
