@@ -7,8 +7,8 @@ var sys = require("util"),
     skinCss = require('../lib/skin').skin;
 
 var argv = require('optimist')
-    .default('t', 'jade')
-    .default('p', 'css')
+    .default('t', 'handlebars')
+    .default('p', 'sass')
     .argv;
 
 if (argv.help || argv.h) {
@@ -59,7 +59,7 @@ function displayHelp() {
   console.log('');
   console.log('  Options:');
   console.log('');
-  console.log('    -t, --template   specify the template. (jade|ejs) (defaults to jade)');
+  console.log('    -t, --template   specify the template. (jade|handlebars|ejs) (defaults to handlebars)');
   console.log('    -p, --pre        specify the css procompiler. (sass|less|none) (defaults to sass)');
   console.log('');
 }
