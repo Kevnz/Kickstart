@@ -34,7 +34,9 @@ asciify("KickStart", function (err, ascii) {
         var pre = argv.pre;
         if (!pre) pre = argv.p;			//	defaults to 'sass'
 
-        kick.build({rootDirectory: root, fullRootDirectory: fullRoot, template: template, precompiler: pre}, function buildCallback (err,result) {
+        var templateEngine = createTemplateEngine(template);
+
+        kick.build({rootDirectory: root, fullRootDirectory: fullRoot, template: templateEngine, precompiler: pre}, function buildCallback (err,result) {
             console.log('--------------');
             console.log('Finished setup');
             console.log('Now run npm install and bower install in project directory');
@@ -52,6 +54,12 @@ function createRoot(args, callback) {
 
     callback(root, fullRoot);
 }
+
+function createTemplateEngine(templateName) {
+    //todo: err handling?
+    return require('../lib/templates/'+templateName+'/template').template;
+}
+
 
 function displayHelp() {
   console.log('');
